@@ -350,6 +350,25 @@ body {
 }
 
 .h {
-  margin-top: 1px;
-  margin-bottom: 1px;
+  margin-top: .0625rem;
+  margin-bottom: .0625rem;
+}
+
+.addWL {
+  border-radius: .5rem;
+  color: none;
+}
+
+.addWL:hover {
+  background-color: orangered;
+}
+
+.lnk {
+  text-decoration: none;
+  display: block;
+  margin: auto;
+}
+
+.space {
+  padding-top: .625rem;
 }
