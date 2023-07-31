@@ -1,0 +1,355 @@
+/* * {
+  box-sizing: border-box;
+} */
+
+.nav {
+  color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0rem;
+  text-decoration: none;
+}
+
+.LName {
+  font-size: 2rem;
+  padding-left: 2rem;
+  color: orangered;
+}
+/* .div ul li link {
+  color: inherit;
+  text-decoration: none;
+} */
+
+.textD {
+  text-decoration: none;
+}
+
+.nav ul {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav li.active {
+  background-color: aqua;
+}
+
+/* .nav li:hover {
+  color: aqua;
+} */
+
+.exp {
+  /* background-color: transparent; */
+  border: 3px solid black;
+  padding: .5rem 2rem;
+  opacity: 0.8;
+  transition-duration: 0.4s;
+}
+
+.exp:hover {
+  opacity: 1;
+  transition-duration: 0.4s;
+}
+
+.logsign {
+  margin-top: .7rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 15% auto 15%;
+  /* padding: 0.625rem; */
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  background-repeat: no-repeat;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.foot-text {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  color: rgb(0, 0, 0);
+  padding: 1rem;
+}
+
+.footer-span {
+  color: orangered;
+}
+
+.quest {
+  font-size: 3rem;
+}
+
+.footer-link {
+  color: orangered;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.footer-link:hover{
+  text-decoration: underline;
+}
+
+.ls {
+  list-style: none;
+}
+
+.bg {
+  background-image: url('./components/pics/home_pic.png');
+  padding: 1rem;
+  height: 1000px;
+  width: 100%;
+}
+
+.homeT {
+  color: aliceblue;
+  font-weight: 1000;
+  text-align: center;
+  padding-top: 16rem;
+}
+
+.redL {
+  border: 5px solid red;
+  height: 970px;
+}
+
+.freeT {
+  border: 2px solid black;
+  max-width: 15rem;
+  margin: auto;
+  margin-top: 6rem;
+  background-color: orangered;
+  color: black;
+  opacity: 1;
+}
+
+.freeT:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+.Logcon {
+  padding: 16rem 0;
+}
+
+.continue {
+  background-color: orangered;
+  opacity: 1;
+  border-radius: .5rem;
+  margin: auto;
+}
+
+.continue:hover {
+  opacity: .7;
+}
+
+.pads {
+  padding: .8rem 0rem;
+}
+
+/* @import url("https://fonts.googleapis.com/css?family=Roboto"); */
+body {
+  margin: 0;
+  font-family: "Roboto";
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #85a8c5;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inner {
+  white-space: nowrap;
+  transition: transform 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.carousel-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 490px;
+  background-color: #fff;
+}
+
+.carousel-item-text {
+  font-size: 1.15rem;
+  margin: 40px 0 40px 0;
+  padding: 0 20px 0 20px;
+  white-space: normal;
+  color: #617d98;
+}
+.carousel-img {
+  width: 250px;
+  padding: 0 20px 0 20px;
+}
+
+/* final stage */
+
+.carousel-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.indicators {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.indicator-buttons {
+  border: none;
+  cursor: pointer;
+}
+
+.indicators > button {
+  margin: 5px;
+  background: none;
+}
+
+.indicator-symbol {
+  color: #26343f;
+}
+
+.indicator-symbol-active {
+  color: #ffffff;
+}
+
+.create {
+  text-align: center;
+}
+
+.white{
+  background-color: whitesmoke;
+}
+
+.blue {
+  background-color: lightblue;
+}
+
+.flx-c{
+  display: flex;
+  flex-direction: column;
+}
+.flx-r{
+  display: flex;
+  flex-direction: row;
+}
+.flx1{
+  flex: 1;
+}
+.flx2{
+  flex: 2;
+}
+.flx3{
+  flex: 3;
+}
+.flx4{
+  flex: 4;
+}
+.flx5{
+  flex: 5;
+}
+.flx6{
+  flex: 6;
+}
+.flx7{
+  flex: 7;
+}
+.flx8{
+  flex: 8;
+}
+.just-se{
+   justify-content: space-evenly;
+}
+
+.cardEx {
+  background-color: black;
+  width: 300px;
+  height: 500px;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+.cardB{
+  position:absolute;
+  height: 100%;
+  width: 100%;
+
+}
+
+
+.title{
+  text-align: center;
+  color: whitesmoke;
+  font-size: 16px;
+}
+
+.p8{
+  padding: 8px;
+}
+
+.tog {
+  opacity: 0;
+  transition: .6s;
+}
+
+.tog:hover {
+  opacity: .95;
+  transition: .6s;
+}
+
+.wrapper {
+  flex-wrap: wrap;
+}
+
+.mx{
+  margin: 20px;
+}
+
+.img{
+  display: block;
+  margin: auto;
+  height: 330px;
+}
+
+.scrol {
+  overflow: scroll;
+}
+
+.cent {
+  justify-content: space-evenly;
+}
+
+.h {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
