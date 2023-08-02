@@ -25,6 +25,11 @@ function Navv() {
         </li>
         <li>
           <div className="logsign">
+            <Link className="textD" to="/watchlist">WATCH-LIST</Link>
+          </div>
+        </li>
+        <li>
+          <div className="logsign">
             <Link className="textD" to="/login">LOGIN</Link>
           </div>
         </li>
