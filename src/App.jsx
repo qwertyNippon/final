@@ -18,10 +18,10 @@ function App() {
       <Navv />
       <Routes>
         <Route children path='/' element={<Home  />} />
-        <Route children path='/Login' element={<Login  />} />
-        <Route children path='/Explore' element={<Explore  />} />
-        <Route children path='/Signup' element={<Signup  />} />
-        <Route children path='/WatchList' element={<WatchList  />} />
+        <Route children path='/login' element={<Login  />} />
+        <Route children path='/explore' element={<Explore  />} />
+        <Route children path='/signup' element={<Signup  />} />
+        <Route children path='/watchList' element={<WatchList  />} />
       </Routes>
       <Footer />
     </>

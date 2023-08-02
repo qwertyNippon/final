@@ -1,27 +1,56 @@
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import { useState } from "react";
+import axios from "axios";
 import '../App.css'
 
-
 function Login() {
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
+    const [userName, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+    const [user, setUser] = useState(null);
     const navigate = useNavigate()
+
+    // const loginUser = async () => {
+    //     try {
+    //         const response = await httpClient.post("http://127.0.0.1:5000/Login", {
+    //             email,
+    //             password,
+    //         });   
+    //         window.location.href = "/Explore";
+    //     }
+    //     catch (error) {
+    //         if (error.response.status === 401) {
+    //             alert("Invalid Email, or Password")
+    //         }
+    //     }
+    // };
+
+
     function backTo(){
         navigate('/Signup')
     }
-    const handleSubmit = (e) => {  
-        e.preventDefault();
-        const formData = new FormData(e.target)
-        const formJson = Object.fromEntries(formData.entries())
-        const url = 'http://localhost:5000/login'
-        navigate('/Explore')
 
-        return fetch(url, {
-            'method' : 'POST',
-            headers : {'Content-Type' : 'application/json'},
-            body : JSON.stringify(formJson)
+    const navi = useNavigate()
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        const form = e.target;
+        console.log(form);
+        let vals = {};
+        vals['username']= e.target[0].value;
+        vals['pass'] = e.target[1].value;
+        console.log(vals);
+        axios.post('http://127.0.0.1:5000/login', JSON.stringify(vals), {
+            headers: { "Content-Type": "application/json" }
+        }
+        )
+        .then(function (response) {
+            console.log(response);
+            navi('/explore')
         })
+        .catch(function (error) {
+            console.log(error);
+        });
+    // const 
     }
     return (
         <>
@@ -37,9 +66,10 @@ function Login() {
                         <div className="pads">
                             <input
                                 name = 'username'
-                                // type="email"
+                                type="text"
                                 className="form-control"
-                                onChange={(e) => setEmail(e.target.value)}
+                                value={userName}
+                                onChange={(e) => setUserName(e.target.value)}
                                 id="exampleFormControlInput1"
                                 placeholder="Username"
                             />
@@ -52,6 +82,8 @@ function Login() {
                             <input
                                 name = 'password'
                                 type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                                 id="inputPassword5"
                                 className="form-control"
                                 aria-labelledby="passwordHelpBlock"
@@ -59,7 +91,7 @@ function Login() {
                             />
                         </div>
                         <div>
-                            <button className="continue container" to="/Explore">Continue</button>
+                            <button type="submit" className="continue container"  >Continue</button>
                         </div>
                         </form>
                         <div>

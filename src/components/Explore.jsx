@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import '../App.css'
 import '../components/Carousel'
 import axios from 'axios'
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 function Explore() {
     
@@ -19,6 +19,21 @@ function Explore() {
     }
     const [anime, setAnime] = useState(() => load_Anime())
     // const [sendto, setSendto] = useContext(null)
+
+    // const [user, setUser] = useState<User | null>(null);
+
+    // useEffect(() => {
+    //     (async () => {
+    //         try {
+
+    //             const response = await Client.get('http://127.0.0.1:5000/@me');
+                
+    //             setUser(response.data);
+    //         } catch (error) {
+    //             console.log("Not authenticated");
+    //         }
+    //     })();
+    // }, []);
     return (
         <>
             <div className="flx-r wrapper cent">
