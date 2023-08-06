@@ -3,10 +3,12 @@ import '../App.css'
 import { useState } from "react";
 
 function Navv() {
-  const [user, setUser] = useState(null)
-  const log = () => {
+  // const [user, setUser] = useState(null)
+  // const log = () => {
 
-  }
+  // }
+
+  // const user = useContext(UserContext)
   
 
   // const logoutUser = async () => {
@@ -18,6 +20,11 @@ function Navv() {
     <div className="nav">
       <Link className="LName textD" to="/">OtakuZone</Link>
       <ul>
+        {/* <li>
+          <div className="logsign">
+            <Link className="textD" ><h2>{`Hello ${user} again!`}</h2></Link>
+          </div>
+        </li> */}
         <li>
           <div className="exp">
             <Link className="textD" to="/explore">EXPLORE</Link>
@@ -40,7 +47,7 @@ function Navv() {
         </li>
         <li>
           <div className="logsign">
-            <Link className="textD"  to="/" >LOGOUT</Link>
+            <Link className="textD"  to="/">LOGOUT</Link>
           </div>
         </li>
       </ul>

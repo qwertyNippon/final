@@ -24,7 +24,7 @@ function Signup() {
         }
         )
         .then(function (response) {
-            console.log(response);
+            // console.log(response);
             navi('/login')
         })
         .catch(function (error) {

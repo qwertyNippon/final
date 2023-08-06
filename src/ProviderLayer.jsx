@@ -6,5 +6,5 @@ const ProviderLayer = () => {
             <App />
         </DataProvider>
     )
-}
+} 
 export default ProviderLayer; 

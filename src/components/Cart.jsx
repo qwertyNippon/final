@@ -1,20 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
-import React, { useContext, useState } from "react";
-import Button from 'react-bootstrap/Button';
-import '../App.css'
-import { DataContext } from "../context/DataProvider";
+const Cart = () => {
 
-function WatchList() {
-    const [added, setAdded] = useState(null)
-    
-
-    const addCard = () => {
-        console.log('add button clicked');
-        
-    } 
-
-    return(
-        <>
+    return (
+        <div>
             <div className="flx-r wrapper cent">
 
                 {anime.posts && anime.posts.length > 0 ? Object.values(anime.posts).map((a, i) => {
@@ -28,7 +15,7 @@ function WatchList() {
                             <hr className="h" />
                             <div className="flx8 scrol">{a.syn}</div>
                             <div className="space"></div>
-                            <div className="flx1 lnk"><button className="addWL" >Add to Watch List</button></div>
+                            <div className="flx1 lnk"><button className="addWL">Add to Watch List</button></div>
                         </div>
                         <div className="flx5  p8 "><img className="img" src={a.img} alt="" /></div>
                         <div className="flx1 title p8"><p className='title'>{a.engT}</p> </div>
@@ -36,11 +23,8 @@ function WatchList() {
                     </div>
                 }) : null}
 
-            </div>
-        </>
+                </div>
+        </div>
     )
 }
-
-
-
-export default WatchList;
+export default Cart;

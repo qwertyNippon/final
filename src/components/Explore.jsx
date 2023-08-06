@@ -14,28 +14,25 @@ function Explore() {
     const load_Anime = async () => {
         const data = await get_Exp()
         console.log(data)
-        // .then(data => console.log(data))
         setAnime(data)
     }
     const [anime, setAnime] = useState(() => load_Anime())
-    // const [sendto, setSendto] = useContext(null)
 
-    // const [user, setUser] = useState<User | null>(null);
-
-    // useEffect(() => {
-    //     (async () => {
-    //         try {
-
-    //             const response = await Client.get('http://127.0.0.1:5000/@me');
-                
-    //             setUser(response.data);
-    //         } catch (error) {
-    //             console.log("Not authenticated");
-    //         }
-    //     })();
-    // }, []);
+    const {addAnime, setAddAnime} = useContext(DataContext);
+    
+    const addCard = (anime) => {
+// make copy
+        let copyAnime = {...anime}
+        // change copy
+        copyAnime[anime.id] 
+        console.log(copyAnime);
+        // set State
+        setAnime(copyAnime)
+    }
+    
+    
     return (
-        <>
+        <> 
             <div className="flx-r wrapper cent">
 
             {anime.posts && anime.posts.length > 0 ? Object.values(anime.posts).map((a, i) => {
@@ -49,7 +46,7 @@ function Explore() {
                         <hr className="h" />
                         <div className="flx8 scrol">{a.syn}</div>
                         <div className="space"></div>
-                        <div className="flx1 lnk"><button className="addWL">Add to Watch List</button></div>
+                        <div className="flx1 lnk"><button className="addWL" onClick={() => addCard()}>Add to Watch List</button></div>
                     </div>
                     <div className="flx5  p8 "><img className="img" src={a.img} alt="" /></div>
                     <div className="flx1 title p8"><p className='title'>{a.engT}</p> </div>

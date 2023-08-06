@@ -1,29 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, createContext, useContext } from "react";
 import axios from "axios";
 import '../App.css'
+
+const UserContext = createContext();
 
 function Login() {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    const [user, setUser] = useState(null);
     const navigate = useNavigate()
-
-    // const loginUser = async () => {
-    //     try {
-    //         const response = await httpClient.post("http://127.0.0.1:5000/Login", {
-    //             email,
-    //             password,
-    //         });   
-    //         window.location.href = "/Explore";
-    //     }
-    //     catch (error) {
-    //         if (error.response.status === 401) {
-    //             alert("Invalid Email, or Password")
-    //         }
-    //     }
-    // };
-
 
     function backTo(){
         navigate('/Signup')
@@ -44,7 +29,7 @@ function Login() {
         }
         )
         .then(function (response) {
-            console.log(response);
+            // console.log(response);
             navi('/explore')
         })
         .catch(function (error) {
