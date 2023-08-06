@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useState, useContext, useEffect } from "react";
 
 function Explore() {
-    
+    const { user, setUser } = useContext(DataContext);
     const get_Exp = async () => {
         const url = 'http://127.0.0.1:5000/api/API'
         const response = await axios.get(url) 
@@ -29,6 +29,12 @@ function Explore() {
         // set State
         setAnime(copyAnime)
     }
+
+    const addWatch = async (data) => {
+        const response = await axios.post('http://localhost:5000/addToWatchList', JSON.stringify(data), {
+            headers : {'Content-Type' : 'application/json'}
+        })
+    }
     
     
     return (
@@ -46,7 +52,7 @@ function Explore() {
                         <hr className="h" />
                         <div className="flx8 scrol">{a.syn}</div>
                         <div className="space"></div>
-                        <div className="flx1 lnk"><button className="addWL" onClick={() => addCard()}>Add to Watch List</button></div>
+                        <div className="flx1 lnk"><button className="addWL" onClick={() => addWatch(a.id, user.id)}>Add to Watch List</button></div>
                     </div>
                     <div className="flx5  p8 "><img className="img" src={a.img} alt="" /></div>
                     <div className="flx1 title p8"><p className='title'>{a.engT}</p> </div>

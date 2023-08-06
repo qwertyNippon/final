@@ -8,8 +8,9 @@ const UserContext = createContext();
 function Login() {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const { user, setUser } = useContext(DataContext);
     const navigate = useNavigate()
-
+    
     function backTo(){
         navigate('/Signup')
     }
