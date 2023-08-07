@@ -3,6 +3,7 @@ import '../App.css'
 import '../components/Carousel'
 import axios from 'axios'
 import { useState, useContext, useEffect } from "react";
+import { DataContext } from "../context/DataProvider";
 
 function Explore() {
     const { user, setUser } = useContext(DataContext);
@@ -17,7 +18,6 @@ function Explore() {
         setAnime(data)
     }
     const [anime, setAnime] = useState(() => load_Anime())
-
     const {addAnime, setAddAnime} = useContext(DataContext);
     
     const addCard = (anime) => {

@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, createContext, useContext } from "react";
 import axios from "axios";
+import { DataContext } from "../context/DataProvider";
 import '../App.css'
 
 const UserContext = createContext();
@@ -15,9 +16,16 @@ function Login() {
         navigate('/Signup')
     }
 
-    const navi = useNavigate()
+    // const showPassword = () => {
+    //     let element = document.getElementById("login-pw")
+    //     if (element.type === "password") {
+    //         element.setAttribute("type", "text")
+    //     } else if (element.type === "text") {
+    //         element.setAttribute("type", "password")
+    //     }
+    // }
 
-    const handleSubmit = e => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.target;
         console.log(form);
@@ -25,19 +33,30 @@ function Login() {
         vals['username']= e.target[0].value;
         vals['pass'] = e.target[1].value;
         console.log(vals);
-        axios.post('http://127.0.0.1:5000/login', JSON.stringify(vals), {
-            headers: { "Content-Type": "application/json" }
+        const response = await axios.post('http://127.0.0.1:5000/login', JSON.stringify(vals), {
+            headers: { "Content-Type": "application/json" },
         }
         )
-        .then(function (response) {
-            // console.log(response);
-            navi('/explore')
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-    // const 
+        .then((response) => handleData(response.data))
+
     }
+        const handleData = (data) => {
+            if (data.message === "authenticated") {
+                    setUser(data.data);
+                    
+                console.log(data)
+                navigate('/explore')
+                    
+        } else if (data.message === "username not found"){
+             alert('username not found')
+        }
+    }
+        // }})
+        // .catch(function (error) {
+        //     console.log(error);
+        //     alert('Error Detected!')
+        // });
+    // const 
     return (
         <>
             <div className="Logcon">

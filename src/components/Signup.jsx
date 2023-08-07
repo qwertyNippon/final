@@ -10,6 +10,15 @@ function Signup() {
     const [password, setPassword] = useState()
     const navi = useNavigate()
 
+    // const showPassword = () => {
+    //     let element = document.getElementById("login-pw")
+    //     if (element.type === "password") {
+    //         element.setAttribute("type", "text")
+    //     } else if (element.type === "text") {
+    //         element.setAttribute("type", "password")
+    //     }
+    // }
+
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
