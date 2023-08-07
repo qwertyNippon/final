@@ -30,7 +30,8 @@ function Explore() {
         setAnime(copyAnime)
     }
 
-    const addWatch = async (data) => {
+    const addWatch = async (user_id, a_id) => {
+        let data = {'user_id' : user_id, 'a_id' : a_id}
         const response = await axios.post('http://localhost:5000/addToWatchList', JSON.stringify(data), {
             headers : {'Content-Type' : 'application/json'}
         })
